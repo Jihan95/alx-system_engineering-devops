@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #This script to terminate a process
 proc=$(pgrep -f 4-to_infinity_and_beyond)
-pkill "$proc"
+pkill -f "$proc"
