@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script to change my home IP
+sudo sed -i 's/^127\.0\.0\.1\s*localhost$/127.0.0.2 localhost/' /etc/hosts
+echo -e "8.8.8.8\tfacebook.com" >> //etc/hosts
