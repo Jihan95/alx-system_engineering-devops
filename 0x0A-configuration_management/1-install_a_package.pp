@@ -4,3 +4,9 @@ package {'flask':
   provider             => 'pip3',
   reinstall_on_refresh => true,
 }
+
+package {'werkzeug':
+  ensure               => '2.1.1',
+  provider             => 'pip3',
+  reinstall_on_refresh => true,
+}
