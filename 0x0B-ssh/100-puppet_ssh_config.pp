@@ -1,4 +1,4 @@
-# Client Configuration file
+i# Client Configuration file
 File_line { 'Turn off passwd auth':
   path    => '/root/.ssh/config',
   line    => 'PasswordAuthentication no',
@@ -7,8 +7,8 @@ File_line { 'Turn off passwd auth':
 
 File_line { 'Declare identity file':
   path    => '/root/.ssh/config',
-  line    => 'FileName ~/.ssh/school',
-  match   => '^FileName',
+  line    => 'IdentityFile ~/.ssh/school',
+  match   => '^IdentityFile',
 }
 
 
