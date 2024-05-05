@@ -1,12 +1,14 @@
 # Client Configuration file
-file { '/root/.ssh/config':
-  ensure  => 'present',
+File_line { 'Turn off passwd auth':
   path    => '/root/.ssh/config',
-  mode    => '0600',
-  content => @(EOT)
-   Host 52.3.243.155
-    HostName 52.3.243.155
-    IdentityFile ~/.ssh/school
-    PasswordAuthentication no
-  EOT
-  }
+  line    => 'PasswordAuthentication no',
+  match   => '^PasswordAuthentication',
+}
+
+File_line { 'Declare identity file':
+  path    => '/root/.ssh/config',
+  line    => 'FileName ~/.ssh/school',
+  match   => '^FileName',
+}
+
+
