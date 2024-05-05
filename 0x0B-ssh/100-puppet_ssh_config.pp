@@ -1,6 +1,12 @@
 # Client Configuration file
 file { '/root/.ssh/config':
   ensure  => 'present',
+  path    => '/root/.ssh/config',
   mode    => '0600',
-  content => 'Host \n\t HostName 52.3.243.155 \n\t FileName ~/.ssh/school\n\t PasswordAuthentication no',
+  content => @(EOT)
+   Host
+    HostName 52.3.243.155
+    FileName ~/.ssh/school
+    PasswordAuthintication no
+  EOT
   }
