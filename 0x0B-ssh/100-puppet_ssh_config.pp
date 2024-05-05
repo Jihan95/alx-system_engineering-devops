@@ -6,7 +6,7 @@ file { '/root/.ssh/config':
   content => @(EOT)
    Host
     HostName 52.3.243.155
-    FileName ~/.ssh/school
+    IdentityFile ~/.ssh/school
     PasswordAuthintication no
   EOT
   }
