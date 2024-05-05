@@ -1,4 +1,4 @@
-i# Client Configuration file
+# Client Configuration file
 File_line { 'Turn off passwd auth':
   path    => '/root/.ssh/config',
   line    => 'PasswordAuthentication no',
