@@ -4,9 +4,9 @@ file { '/root/.ssh/config':
   path    => '/root/.ssh/config',
   mode    => '0600',
   content => @(EOT)
-   Host
+   Host 52.3.243.155
     HostName 52.3.243.155
     IdentityFile ~/.ssh/school
-    PasswordAuthintication no
+    PasswordAuthentication no
   EOT
   }
