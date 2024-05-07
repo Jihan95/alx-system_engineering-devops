@@ -2,16 +2,8 @@
 # a bash script to intall nginx on the server
 sudo apt -y update
 sudo apt -y install nginx
-echo "server {
-    listen 80;
-    server_name _;
-    root /var/www/html;
-    index index.html;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}" | sudo tee /etc/nginx/sites-available/default > /dev/null
-new_location="\n\tlocation = /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
-sudo sed -i "/^}$/i\\$new_location" /etc/nginx/sites-available/default
+re="service_name _;"
+new="service_name ji-han.tech;\n\t location /redirect_me {\n\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}\n"
+sudo sed -i "s/$re/$new/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
+sudo service nginx reload
