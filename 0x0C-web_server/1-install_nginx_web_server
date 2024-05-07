@@ -2,14 +2,5 @@
 # a bash script to intall nginx on the server
 sudo apt -y update
 sudo apt -y install nginx
-echo "server {
-    listen 80;
-    server_name _;
-    root /var/www/html;
-    index index.html;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+echo "<h1>Hello World!</h1>" >> /var/www/html/index.html
 sudo service nginx restart
