@@ -13,5 +13,5 @@ echo "server {
     }
 }" | sudo tee /etc/nginx/sites-available/default > /dev/null
 new="\n    location = /redirect_me {\n\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}"
-sed -i '/^}$/i \'"$new" /etc/nginx/sites-available/default
+sed -i "/^}$/i '\'""$new" /etc/nginx/sites-available/default
 sudo service nginx restart
