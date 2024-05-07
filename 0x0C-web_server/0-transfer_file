@@ -7,5 +7,5 @@ else
 	ip="$2"
 	user="$3"
 	pkey_path="$4"
-	scp -i "$pkey_path" "$path" "$user"@"$ip":~/
+	scp  -o StrictHostKeyChecking=no -i "$pkey_path" "$path" "$user"@"$ip":~/
 fi
