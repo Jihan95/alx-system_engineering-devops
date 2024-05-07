@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # a bash script to intall nginx on the server
-sudo apt update
-sudo apt install nginx -y nginx
+sudo apt -y update
+sudo apt -y install nginx
 echo "server {
     listen 80;
     server_name _;
