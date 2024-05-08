@@ -4,6 +4,6 @@ sudo apt -y update
 sudo apt -y install nginx
 sudo service nginx start
 re="service_name _;"
-new="service_name ji-han.tech;\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+new="service_name ji-han.tech;\n\tlocation=/redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
 sudo sed -i "s|$re|$new|" /etc/nginx/sites-enabled/default
 sudo service nginx restart
