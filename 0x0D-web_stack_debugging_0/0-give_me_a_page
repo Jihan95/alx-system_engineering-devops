@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Apache server configuration file
+DOCUMENT_ROOT="/var/www/html"
+HELLO_PAGE="$DOCUMENT_ROOT/index.html"
+sudo apt-get update
+sudo apt-get install -y apache2
+echo "<html><body><h1>Hello Holberton</h1></body></html>" | sudo tee "$HELLO_PAGE" >/dev/null
+sudo a2enmod rewrite
+sudo a2enmod alias
+sudo service apache2 restart
