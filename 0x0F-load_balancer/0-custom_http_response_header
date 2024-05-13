@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# a bash script to intall nginx on the server
+header_name="X-Served-By"
+header_value="$HOSTNAME"
+sudo apt -y update
+sudo apt -y install nginx
+sudo sed -i "/server_name _;/a\        add_header "$header_name" "$header_value";" /etc/nginx/sites-enabled/default
+sudo service nginx restart
