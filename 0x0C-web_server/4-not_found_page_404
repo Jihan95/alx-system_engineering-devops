@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a bash script to make redirect in nginx config file
+sudo apt -y update
+sudo apt -y install nginx
+new_string="server_name _;\n\trewrite ^/redirect_me https://www.google.co.uk/ permanent;"
+sudo sed -i "s|server_name _;|${new_string}|g" /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" >> /var/www/html/404.html
+old_string="listen 80 default_server;"
+new_str="listen 80 default_server;\n\terror_page 404 /404.html\n"
+sudo sed -i "s|${old_string}|${new_str}|g" /etc/nginx/sites-enabled/default
+sudo service nginx restart
