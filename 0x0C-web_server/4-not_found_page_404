@@ -6,6 +6,6 @@ new_string="server_name _;\n\trewrite ^/redirect_me https://www.google.co.uk/ pe
 sudo sed -i "s|server_name _;|${new_string}|g" /etc/nginx/sites-enabled/default
 echo "Ceci n'est pas une page" >> /var/www/html/custom_error.html
 old_string="listen 80 default_server;"
-new_str="listen 80 default_server;\n\terror_page 404 /custom_error.html\n"
+new_str="listen 80 default_server;\n\terror_page 404 /custom_error.html;\n"
 sudo sed -i "s|${old_string}|${new_str}|g" /etc/nginx/sites-enabled/default
 sudo service nginx restart
