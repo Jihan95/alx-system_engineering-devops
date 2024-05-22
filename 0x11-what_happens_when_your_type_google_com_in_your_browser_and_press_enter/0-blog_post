@@ -1,0 +1,22 @@
+Have you ever wondered what happens behind the scenes from the moment you type a URL into your browser until the webpage loads? Let's explore this fascinating journey.
+Domain Name System (DNS) Request
+When you type "www.google.com," you are using a domain name. Domain names are easy for humans to remember, but computers and networks prefer numerical IP addresses. The first step in accessing the webpage is to resolve the domain name to its corresponding IP address, which is done via the Domain Name System (DNS).
+DNS functions like a phone book for the internet. When you want to call a friend, you look up their name to find their phone number. Similarly, DNS translates the domain name "www.google.com" into an IP address that the network can use to route your request.
+Establishing a Connection: TCP/IP
+Once the IP address is obtained, your browser needs to establish a connection with the web server at that address. This is done using the Transmission Control Protocol/Internet Protocol (TCP/IP) suite. TCP/IP ensures reliable and efficient data transmission across the network. TCP handles the data delivery, ensuring all packets arrive intact and in order, while IP manages the routing of these packets between your device and the server.
+Secure Communication: HTTPS/SSL
+Webpages are typically accessed using HyperText Transfer Protocol (HTTP) or its secure version, HTTPS. HTTPS ensures that the data exchanged between your browser and the server is encrypted and secure, using Secure Sockets Layer (SSL) or its successor, Transport Layer Security (TLS). This encryption prevents unauthorized parties from eavesdropping on your data.
+Firewalls: Security Gatekeepers
+Before your request reaches the web server, it may pass through a firewall. Firewalls can be hardware devices or software applications that protect servers from unauthorized access and cyber threats. They act as barriers, allowing only trusted traffic to reach the server.
+Web Servers: Hosting the Content
+The web server is a computer that hosts the website's files (HTML, CSS, JavaScript, images, etc.) and makes them accessible over the internet. When the server receives your request, it processes it and sends back the appropriate files. This response is transmitted back to your browser, which then renders the web page for you to view and interact with.
+Handling High Traffic: Load Balancers
+If thousands or millions of people request "www.google.com" simultaneously, a single server cannot handle all these requests. Instead, multiple servers work together, managed by load balancers. Load balancers distribute incoming traffic across several servers to prevent any single server from becoming overwhelmed. They use various algorithms, such as Round Robin, Weighted Round Robin, Least Connections, and Least Response Time, to efficiently manage the traffic.
+Application Servers: Processing the Request
+Once a load balancer forwards your request to an appropriate server, an application server processes it. This server executes server-side logic, which may include interacting with databases, executing business logic, or accessing other resources.
+Databases: Storing and Retrieving Data
+Web applications often rely on databases to store and manage data. Databases organize data in a structured manner, allowing for efficient retrieval, manipulation, and storage. When the application server needs to fetch or store data, it communicates with the database.
+Rendering the Webpage
+Finally, after the server processes your request and retrieves any necessary data, it sends the response back to your browser. Your browser processes the HTML, CSS, and JavaScript files, rendering the web page for you to see and interact with.
+In summary, the process of accessing a webpage involves domain name resolution, establishing secure and reliable connections, navigating through firewalls, distributing traffic with load balancers, processing requests with application servers, and retrieving data from databases. All these steps happen in the blink of an eye, providing you with a seamless browsing experience.
+
