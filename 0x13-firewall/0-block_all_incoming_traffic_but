@@ -7,3 +7,6 @@ sudo ufw enable
 sudo ufw allow proto tcp from any to any port 22
 sudo ufw allow proto tcp from any to any port 443
 sudo ufw allow proto tcp from any to any port 80
+sudo ufw allow ssh
+sudo ufw allow https
+sudo ufw allow http
