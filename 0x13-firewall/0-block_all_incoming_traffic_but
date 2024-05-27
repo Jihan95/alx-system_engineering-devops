@@ -1,0 +1,8 @@
+# Configure ufw so that it blocks all incoming traffic, except the following TCP ports:22, 443, 80
+sudo apt -y update
+sudo apt -y install ufw
+sudo ufw default deny incoming
+sudo ufw enable
+sudo ufw allow proto tcp from any to any port 22
+sudo ufw allow proto tcp from any to any port 443
+sudo ufw allow proto tcp from any to any port 80
