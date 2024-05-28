@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# a Bash script that generates a MySQL dump and creates a compressed archive out of it.
+if [ -z "$1" ]; then
+  echo "Usage: $0 <mysql_root_password>"
+  exit 1
+fi
+
+MYSQL_ROOT_PASSWORD=$1
+DUMP_FILE="backup.sql"
+ARCHIVE_FILE="$(date +%d-%m-%Y).tar.gz"
+
+mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" --all-databases > "$DUMP_FILE"
+
+tar -czvf "$ARCHIVE_FILE" "$DUMP_FILE"
+
+rm "$DUMP_FILE"
