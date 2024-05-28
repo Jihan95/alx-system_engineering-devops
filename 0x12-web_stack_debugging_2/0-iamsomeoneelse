@@ -11,4 +11,4 @@ fi
 USERNAME=$1
 
 # Use su to run the whoami command as the specified user
-su -c "whoami" "$USERNAME"
+su -s /bin/bash -c "whoami" "$USERNAME"
