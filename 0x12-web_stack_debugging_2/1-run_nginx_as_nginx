@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#  a Bash script that configures the container to nginx must be running as nginx user nginx must be listening on all active IPs on port 8080
+sudo apt update
+sudo apt -y install nginx
+sudo useradd -r -s /sbin/nologin nginx
+sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+old_str="user www-data;"
+new_str="user nginx;"
+sudo sed -i "s|${old_str}|${new_str}|g" /etc/nginx/sites-available/default
+old="listen 80;"
+new="listen 8080;"
+sudo sed -i "s|${old}|${new}|g" /etc/nginx/sites-available/default
+sudo service nginx restart
