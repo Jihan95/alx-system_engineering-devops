@@ -12,5 +12,3 @@ ARCHIVE_FILE="$(date +%d-%m-%Y).tar.gz"
 mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" --all-databases > "$DUMP_FILE"
 
 tar -czvf "$ARCHIVE_FILE" "$DUMP_FILE"
-
-rm "$DUMP_FILE"
