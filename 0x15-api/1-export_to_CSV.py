@@ -15,14 +15,13 @@ def main():
         url = fixed + 'todos/?userId=' + sys.argv[1]
         url1 = fixed + 'users/?id=' + sys.argv[1]
         response = requests.get(url)
-        emp_name = requests.get(url1).json()[0]["username"]
+        user = requests.get(url1).json()[0]["username"]
         if response.status_code == 200:
             data = response.json()
-            with open(f'{sys.argv[1]}.csv', 'w', newline='') as csvfile:
-                writer = csv.writer(csvfile)
+            with open(f'{sys.argv[1]}.csv', 'w', newline='') as f:
                 for i in data:
-                    row = [sys.argv[1], emp_name, i['completed'], i['title']]
-                    writer.writerow(row)
+                    row = f'"{sys.argv[1]}","{user}","{i["completed"]}",'
+                    f.write(row + f'"{i["title"]}"\n')
     else:
         print('USAGE: 1-export_to_CSV.py EMPLOYEE_ID')
 
