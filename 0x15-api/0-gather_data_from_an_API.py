@@ -6,7 +6,9 @@ TODO list progress. """
 import requests
 import sys
 
-if __name__ == '__main__':
+
+def main():
+    """ main function """
     if sys.argv[1]:
         fixed = 'https://jsonplaceholder.typicode.com/'
         url = fixed + 'todos/?userId=' + sys.argv[1]
@@ -26,3 +28,7 @@ if __name__ == '__main__':
                 print(f"\t {task}")
     else:
         print('USAGE: 0-gather_data_from_an_API.py EMPLOYEE_ID')
+
+
+if __name__ == "__main__":
+    main()
